@@ -75,3 +75,5 @@ SELECT
 	c.animal_id
 FROM customer c
 WHERE c.id = 2
+
+INSERT INTO `Animal` VALUES (null, "Daps", "Kennel", "Boxer", 2, 2);
