@@ -108,3 +108,8 @@ JOIN Location l
 	ON l.id = e.location_id
 
 SELECT * FROM Animal ORDER BY id DESC;
+
+ALTER TABLE Customer 
+ADD password TEXT NOT NULL
+
+INSERT INTO `Customer` VALUES (null, "Fat Randy", "999 Nissan Stadium", "fat@randy.com", 5, "password");

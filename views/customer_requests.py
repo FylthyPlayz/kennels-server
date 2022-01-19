@@ -173,7 +173,8 @@ def get_customers_by_email(email):
             c.id,
             c.name,
             c.address,
-            c.email
+            c.email,
+            c.password
         from Customer c
         WHERE c.email = ?
         """, ( email, ))
