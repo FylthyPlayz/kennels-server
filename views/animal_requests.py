@@ -113,7 +113,7 @@ def create_animal(new_animal):
 
         db_cursor.execute("""
         INSERT INTO Animal
-            ( name, breed, status, location_id, customer_id )
+            ( name, species, status, location_id, customer_id )
         VALUES
             ( ?, ?, ?, ?, ?);
         """, (new_animal['name'], new_animal['species'],
@@ -151,12 +151,12 @@ def update_animal(id, new_animal):
         UPDATE Animal
             SET
                 name = ?,
-                breed = ?,
+                species = ?,
                 status = ?,
                 location_id = ?,
                 customer_id = ?
         WHERE id = ?
-        """, (new_animal['name'], new_animal['breed'],
+        """, (new_animal['name'], new_animal['species'],
               new_animal['status'], new_animal['location_id'],
               new_animal['customer_id'], id, ))
 

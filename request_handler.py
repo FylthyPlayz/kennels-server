@@ -154,7 +154,7 @@ class HandleRequests(BaseHTTPRequestHandler):
     # It handles any PUT request.
 
     def do_PUT(self):
-        self._set_headers(204)
+        #self._set_headers(204)
         content_len = int(self.headers.get('content-length', 0))
         post_body = self.rfile.read(content_len)
         post_body = json.loads(post_body)
@@ -172,7 +172,8 @@ class HandleRequests(BaseHTTPRequestHandler):
             success = update_location(id, post_body)
         if success:
             self._set_headers(204)
-        else: self._set_headers(404)
+        else: 
+            self._set_headers(404)
         # Encode the new animal and send in response
         self.wfile.write("".encode())
 
