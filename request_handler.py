@@ -97,7 +97,7 @@ class HandleRequests(BaseHTTPRequestHandler):
                     response = f"{get_single_customer(id)}"
                 else:
                     response = f"{get_all_customers()}"
-            self.wfile.write(response.encode())       
+                  
         elif len(parsed) == 3:
             ( resource, key, value ) = parsed
             if key == "email" and resource == "customers":
@@ -108,7 +108,7 @@ class HandleRequests(BaseHTTPRequestHandler):
                 response = get_employee_by_location(value)
             if key == "status" and resource == "animals":
                 response = get_animals_by_status(value)
-            self.wfile.write(response.encode())
+        self.wfile.write(response.encode())
 
     # Here's a method on the class that overrides the parent's method.
     # It handles any POST request.
